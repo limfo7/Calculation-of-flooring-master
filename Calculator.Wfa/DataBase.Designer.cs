@@ -34,6 +34,8 @@
             this.ShowProductsBtn = new System.Windows.Forms.Button();
             this.OrdersDataGridView = new System.Windows.Forms.DataGridView();
             this.ShowOrdersBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ManufacturersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersDataGridView)).BeginInit();
@@ -93,11 +95,31 @@
             this.ShowOrdersBtn.UseVisualStyleBackColor = true;
             this.ShowOrdersBtn.Click += new System.EventHandler(this.ShowOrdersBtn_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(791, 428);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Add new product";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(567, 428);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(104, 23);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "Create new order";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // DataBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 525);
+            this.ClientSize = new System.Drawing.Size(942, 525);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ShowOrdersBtn);
             this.Controls.Add(this.OrdersDataGridView);
             this.Controls.Add(this.ShowProductsBtn);
@@ -106,6 +128,7 @@
             this.Controls.Add(this.ManufacturersDataGridView);
             this.Name = "DataBase";
             this.Text = "DataBase";
+            this.Load += new System.EventHandler(this.DataBase_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ManufacturersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersDataGridView)).EndInit();
@@ -120,5 +143,7 @@
         private System.Windows.Forms.Button ShowProductsBtn;
         private System.Windows.Forms.DataGridView OrdersDataGridView;
         private System.Windows.Forms.Button ShowOrdersBtn;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

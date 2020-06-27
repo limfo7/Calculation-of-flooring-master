@@ -28,5 +28,10 @@ namespace Calculator.Wfa
         {
             OrdersDataGridView.DataSource = AppContext.OrderforBuyings.ToList();
         }
+
+        private void DataBase_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
