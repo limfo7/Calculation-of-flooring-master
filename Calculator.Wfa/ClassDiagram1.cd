@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Calculator.Wfa.CalculatorForm" Collapsed="true">
+    <Position X="8.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DgBiBEECgSihEIQhABKAIgGCYAAaAAAAAGKFAAMBAAg=</HashCode>
+      <FileName>CalculatorForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Wfa.InputPanel" Collapsed="true">
+    <Position X="7" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAACAAAAAAAACAAAACAAAAABEIEAAAAAAAAAA=</HashCode>
+      <FileName>InputPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Wfa.OutputPanel" Collapsed="true">
+    <Position X="7" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>OutputPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Wfa.Program" Collapsed="true">
+    <Position X="10.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Wfa.DataLayer.AppDbContext" Collapsed="true">
+    <Position X="7" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAQAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAgQ=</HashCode>
+      <FileName>DataLayer\AppDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Wfa.DataLayer.CoverageType" Collapsed="true">
+    <Position X="10.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAACAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataLayer\CoverageType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Wfa.DataLayer.DbInitializer" Collapsed="true">
+    <Position X="12.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataLayer\DbInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Wfa.DataLayer.Manufacturer" Collapsed="true">
+    <Position X="10.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataLayer\Manufacturer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Wfa.DataLayer.Order" Collapsed="true">
+    <Position X="12.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataLayer\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Wfa.DataLayer.Product" Collapsed="true">
+    <Position X="8.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAkAAAAAAAAAAACAAAAgAAQAAEEAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>DataLayer\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Wfa.Properties.Resources" Collapsed="true">
+    <Position X="12.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Wfa.Properties.Settings" Collapsed="true">
+    <Position X="7" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Calculator.Wfa.CoveringType" Collapsed="true">
+    <Position X="7" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAEAAAIAAAAAAQAAAAAAAAAABAAAAAAIA=</HashCode>
+      <FileName>CoveringType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
