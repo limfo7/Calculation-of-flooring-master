@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using System.Linq;
 using System.Drawing;
 using System.IO;
-using Calculator.Wfa.DataLayer;
 
 namespace Calculator.Wfa
 {
@@ -12,7 +11,6 @@ namespace Calculator.Wfa
     {
         private  List<InputPanel> _inputPanel = new List<InputPanel>();
         private List<OutputPanel> _outputPanels = new List<OutputPanel>();
-        private AppDbContext _appContext = new AppDbContext();
         public int InputLevel { get { return _inputPanel.Count; } }
         public int OutputLevel { get { return _outputPanels.Count; } }
 
