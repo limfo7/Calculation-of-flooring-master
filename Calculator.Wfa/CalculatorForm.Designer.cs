@@ -53,6 +53,12 @@
             this.SaveBtn = new System.Windows.Forms.Button();
             this.CatalogBtn = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.AddObstacleToAreaBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ObstacleLengthTextBox = new System.Windows.Forms.TextBox();
+            this.ObstacleWidthTextBox = new System.Windows.Forms.TextBox();
+            this.ObstacleCheckBox = new System.Windows.Forms.CheckBox();
             this.CovTypesPanel.SuspendLayout();
             this.ResultLogPanel.SuspendLayout();
             this.SuspendLayout();
@@ -282,11 +288,75 @@
             this.CatalogBtn.UseVisualStyleBackColor = true;
             this.CatalogBtn.Click += new System.EventHandler(this.CatalogBtn_Click);
             // 
+            // AddObstacleToAreaBtn
+            // 
+            this.AddObstacleToAreaBtn.Enabled = false;
+            this.AddObstacleToAreaBtn.Location = new System.Drawing.Point(222, 428);
+            this.AddObstacleToAreaBtn.Name = "AddObstacleToAreaBtn";
+            this.AddObstacleToAreaBtn.Size = new System.Drawing.Size(85, 23);
+            this.AddObstacleToAreaBtn.TabIndex = 22;
+            this.AddObstacleToAreaBtn.Text = "Add obstacle";
+            this.AddObstacleToAreaBtn.UseVisualStyleBackColor = true;
+            this.AddObstacleToAreaBtn.Click += new System.EventHandler(this.AddObstacleToAreaBtn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 411);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 13);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Obstacle length (m.)";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 453);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 13);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Obstacle width (m.)";
+            // 
+            // ObstacleLengthTextBox
+            // 
+            this.ObstacleLengthTextBox.Enabled = false;
+            this.ObstacleLengthTextBox.Location = new System.Drawing.Point(116, 408);
+            this.ObstacleLengthTextBox.Name = "ObstacleLengthTextBox";
+            this.ObstacleLengthTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ObstacleLengthTextBox.TabIndex = 25;
+            this.ObstacleLengthTextBox.Text = "0";
+            // 
+            // ObstacleWidthTextBox
+            // 
+            this.ObstacleWidthTextBox.Enabled = false;
+            this.ObstacleWidthTextBox.Location = new System.Drawing.Point(116, 450);
+            this.ObstacleWidthTextBox.Name = "ObstacleWidthTextBox";
+            this.ObstacleWidthTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ObstacleWidthTextBox.TabIndex = 26;
+            this.ObstacleWidthTextBox.Text = "0";
+            // 
+            // ObstacleCheckBox
+            // 
+            this.ObstacleCheckBox.AutoSize = true;
+            this.ObstacleCheckBox.Location = new System.Drawing.Point(12, 356);
+            this.ObstacleCheckBox.Name = "ObstacleCheckBox";
+            this.ObstacleCheckBox.Size = new System.Drawing.Size(68, 17);
+            this.ObstacleCheckBox.TabIndex = 27;
+            this.ObstacleCheckBox.Text = "Obstacle";
+            this.ObstacleCheckBox.UseVisualStyleBackColor = true;
+            this.ObstacleCheckBox.CheckedChanged += new System.EventHandler(this.ObstacleCheckBox_CheckedChanged);
+            // 
             // CalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1029, 519);
+            this.Controls.Add(this.ObstacleCheckBox);
+            this.Controls.Add(this.ObstacleWidthTextBox);
+            this.Controls.Add(this.ObstacleLengthTextBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.AddObstacleToAreaBtn);
             this.Controls.Add(this.CatalogBtn);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.ClearCheckBoxesBtn);
@@ -307,7 +377,6 @@
             this.Name = "CalculatorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CalculatorForm";
-            this.Load += new System.EventHandler(this.CalculatorForm_Load);
             this.CovTypesPanel.ResumeLayout(false);
             this.CovTypesPanel.PerformLayout();
             this.ResultLogPanel.ResumeLayout(false);
@@ -342,6 +411,12 @@
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Button CatalogBtn;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button AddObstacleToAreaBtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox ObstacleLengthTextBox;
+        private System.Windows.Forms.TextBox ObstacleWidthTextBox;
+        private System.Windows.Forms.CheckBox ObstacleCheckBox;
     }
 }
 

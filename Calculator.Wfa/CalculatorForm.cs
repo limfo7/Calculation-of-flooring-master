@@ -9,10 +9,11 @@ namespace Calculator.Wfa
 {
     public partial class CalculatorForm : Form
     {
-        private  List<InputPanel> _inputPanel = new List<InputPanel>();
+        private List<InputPanel> _inputPanel = new List<InputPanel>();
         private List<OutputPanel> _outputPanels = new List<OutputPanel>();
         public int InputLevel { get { return _inputPanel.Count; } }
         public int OutputLevel { get { return _outputPanels.Count; } }
+        public bool ObstacleFlag { get; set; } = false;
 
         public CalculatorForm()
         {
@@ -30,12 +31,25 @@ namespace Calculator.Wfa
 
         public void RefreshArea()
         {
-            if (double.TryParse(FloorLengthTextBox.Text, out double resultLength) && double.TryParse(FloorWidthTextBox.Text, out double resultWidth))
+            if (double.TryParse(FloorLengthTextBox.Text, out double resultLength) &&
+                double.TryParse(FloorWidthTextBox.Text, out double resultWidth))
             {
-                AreaLbl.Text = $"Floor area: {resultLength * resultWidth} m2";
+                if (double.TryParse(ObstacleLengthTextBox.Text, out double resultObstacleLength) &&
+                    double.TryParse(ObstacleWidthTextBox.Text, out double resultObstacleWidth))
+                {
+                    var area = resultLength * resultWidth - resultObstacleLength * resultObstacleWidth;
+                    if (area <= 0)
+                    {
+                        MessageBox.Show("Your obstacle is suspicios");
+                        return;
+                    }
+                    AreaLbl.Text = $"Floor area: {area} m2";
+                    return;
+                }
+                AreaLbl.Text = "Invalid obstacle input";
                 return;
             }
-            AreaLbl.Text = "Invalid format";
+            AreaLbl.Text = "Invalid floor input";
         }
 
         private double Round(double value)
@@ -199,14 +213,41 @@ namespace Calculator.Wfa
 
         private void CatalogBtn_Click(object sender, EventArgs e)
         {
-            DataBase dataBase= new DataBase();
+            DataBase dataBase = new DataBase();
             dataBase.Show();
-            //DbInitializer.Seed(_appContext);
         }
 
-        private void CalculatorForm_Load(object sender, EventArgs e)
+        private void ObstacleCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            
+            ObstacleFlag = !ObstacleFlag;
+            if (ObstacleFlag)
+            {
+                AddObstacleToAreaBtn.Enabled = true;
+                ObstacleLengthTextBox.Enabled = true;
+                ObstacleWidthTextBox.Enabled = true;
+                ObstacleLengthTextBox.Text = "0";
+                ObstacleWidthTextBox.Text = "0";
+                RefreshArea();
+            }
+            else
+            {
+                AddObstacleToAreaBtn.Enabled = false;
+                ObstacleLengthTextBox.Enabled = false;
+                ObstacleWidthTextBox.Enabled = false;
+                ObstacleLengthTextBox.Text = "0";
+                ObstacleWidthTextBox.Text = "0";
+                RefreshArea();
+            }
+        }
+
+        private void AddObstacleToAreaBtn_Click(object sender, EventArgs e)
+        {
+            if (ObstacleWidthTextBox.Text == string.Empty || ObstacleLengthTextBox.Text == string.Empty)
+            {
+                MessageBox.Show("Try to enter some data");
+                return;
+            }
+            RefreshArea();
         }
     }
 }
