@@ -2,9 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Calculator.Core.DAL.Context;
+using Calculator.Core.DAL.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,23 +26,13 @@ namespace Calculator.Core
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ParkingSpaceDbContext>(options =>
-     options.UseSqlServer(
-        Configuration.GetConnectionString("DefaultConnection"),
-        b => b.MigrationsAssembly("Alpha.DAL")));
+            services.AddDbContext<CalculationOfFlooringDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(options =>
-                {
-                    options.LoginPath = new PathString("/Account/Login");
-                    options.AccessDeniedPath = new PathString("/Account/Index");
-                });
-
-            services.AddTransient<IParkingSpaceRepository, ParkingSpaceRepository>();
-            services.AddTransient<IRequestRepository, RequestRepository>();
-            services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<ILogRepository, LogRepository>();
-            services.AddTransient<IRoleRepository, RoleRepository>();
+            services.AddTransient<ICoverageTypeRepository, CoverageTypeRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IManufacturerRepository, ManufacturerRepository>();
+            services.AddTransient<IOrderforBuyingRepository, OrderforBuyingRepository>();
 
 
             services.AddMvc();
