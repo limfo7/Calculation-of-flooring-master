@@ -34,8 +34,18 @@
             this.ShowProductsBtn = new System.Windows.Forms.Button();
             this.OrdersDataGridView = new System.Windows.Forms.DataGridView();
             this.ShowOrdersBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.AddProductBtn = new System.Windows.Forms.Button();
+            this.Cost1Lbl = new System.Windows.Forms.Label();
+            this.Cost1TextBox = new System.Windows.Forms.TextBox();
+            this.CostOptTextBox = new System.Windows.Forms.TextBox();
+            this.CostOptLbl = new System.Windows.Forms.Label();
+            this.ManufacturerComboBox = new System.Windows.Forms.ComboBox();
+            this.ManufacturerLbl = new System.Windows.Forms.Label();
+            this.NameLbl = new System.Windows.Forms.Label();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CoverageTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.AddProductPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ManufacturersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersDataGridView)).BeginInit();
@@ -95,44 +105,135 @@
             this.ShowOrdersBtn.UseVisualStyleBackColor = true;
             this.ShowOrdersBtn.Click += new System.EventHandler(this.ShowOrdersBtn_Click);
             // 
-            // button1
+            // AddProductBtn
             // 
-            this.button1.Location = new System.Drawing.Point(791, 428);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Add new product";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AddProductBtn.Location = new System.Drawing.Point(736, 70);
+            this.AddProductBtn.Name = "AddProductBtn";
+            this.AddProductBtn.Size = new System.Drawing.Size(104, 21);
+            this.AddProductBtn.TabIndex = 20;
+            this.AddProductBtn.Text = "Add new product";
+            this.AddProductBtn.UseVisualStyleBackColor = true;
+            this.AddProductBtn.Click += new System.EventHandler(this.AddProductBtn_Click);
             // 
-            // button2
+            // Cost1Lbl
             // 
-            this.button2.Location = new System.Drawing.Point(567, 428);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 23);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Create new order";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Cost1Lbl.AutoSize = true;
+            this.Cost1Lbl.Location = new System.Drawing.Point(467, 48);
+            this.Cost1Lbl.Name = "Cost1Lbl";
+            this.Cost1Lbl.Size = new System.Drawing.Size(37, 13);
+            this.Cost1Lbl.TabIndex = 21;
+            this.Cost1Lbl.Text = "Cost1:";
+            // 
+            // Cost1TextBox
+            // 
+            this.Cost1TextBox.Location = new System.Drawing.Point(552, 45);
+            this.Cost1TextBox.Name = "Cost1TextBox";
+            this.Cost1TextBox.Size = new System.Drawing.Size(150, 20);
+            this.Cost1TextBox.TabIndex = 22;
+            // 
+            // CostOptTextBox
+            // 
+            this.CostOptTextBox.Location = new System.Drawing.Point(552, 71);
+            this.CostOptTextBox.Name = "CostOptTextBox";
+            this.CostOptTextBox.Size = new System.Drawing.Size(150, 20);
+            this.CostOptTextBox.TabIndex = 24;
+            // 
+            // CostOptLbl
+            // 
+            this.CostOptLbl.AutoSize = true;
+            this.CostOptLbl.Location = new System.Drawing.Point(467, 74);
+            this.CostOptLbl.Name = "CostOptLbl";
+            this.CostOptLbl.Size = new System.Drawing.Size(48, 13);
+            this.CostOptLbl.TabIndex = 23;
+            this.CostOptLbl.Text = "CostOpt:";
+            // 
+            // ManufacturerComboBox
+            // 
+            this.ManufacturerComboBox.FormattingEnabled = true;
+            this.ManufacturerComboBox.Location = new System.Drawing.Point(552, 97);
+            this.ManufacturerComboBox.Name = "ManufacturerComboBox";
+            this.ManufacturerComboBox.Size = new System.Drawing.Size(150, 21);
+            this.ManufacturerComboBox.TabIndex = 25;
+            // 
+            // ManufacturerLbl
+            // 
+            this.ManufacturerLbl.AutoSize = true;
+            this.ManufacturerLbl.Location = new System.Drawing.Point(467, 100);
+            this.ManufacturerLbl.Name = "ManufacturerLbl";
+            this.ManufacturerLbl.Size = new System.Drawing.Size(73, 13);
+            this.ManufacturerLbl.TabIndex = 26;
+            this.ManufacturerLbl.Text = "Manufacturer:";
+            // 
+            // NameLbl
+            // 
+            this.NameLbl.AutoSize = true;
+            this.NameLbl.Location = new System.Drawing.Point(466, 22);
+            this.NameLbl.Name = "NameLbl";
+            this.NameLbl.Size = new System.Drawing.Size(38, 13);
+            this.NameLbl.TabIndex = 27;
+            this.NameLbl.Text = "Name:";
+            // 
+            // NameTextBox
+            // 
+            this.NameTextBox.Location = new System.Drawing.Point(552, 19);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(150, 20);
+            this.NameTextBox.TabIndex = 28;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(467, 127);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Coverage type:";
+            // 
+            // CoverageTypeComboBox
+            // 
+            this.CoverageTypeComboBox.FormattingEnabled = true;
+            this.CoverageTypeComboBox.Location = new System.Drawing.Point(552, 124);
+            this.CoverageTypeComboBox.Name = "CoverageTypeComboBox";
+            this.CoverageTypeComboBox.Size = new System.Drawing.Size(150, 21);
+            this.CoverageTypeComboBox.TabIndex = 30;
+            // 
+            // AddProductPanel
+            // 
+            this.AddProductPanel.Location = new System.Drawing.Point(457, 12);
+            this.AddProductPanel.Name = "AddProductPanel";
+            this.AddProductPanel.Size = new System.Drawing.Size(393, 145);
+            this.AddProductPanel.TabIndex = 31;
             // 
             // DataBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 525);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1023, 525);
+            this.Controls.Add(this.CoverageTypeComboBox);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.NameTextBox);
+            this.Controls.Add(this.NameLbl);
+            this.Controls.Add(this.ManufacturerLbl);
+            this.Controls.Add(this.ManufacturerComboBox);
+            this.Controls.Add(this.CostOptTextBox);
+            this.Controls.Add(this.CostOptLbl);
+            this.Controls.Add(this.Cost1TextBox);
+            this.Controls.Add(this.Cost1Lbl);
+            this.Controls.Add(this.AddProductBtn);
             this.Controls.Add(this.ShowOrdersBtn);
             this.Controls.Add(this.OrdersDataGridView);
             this.Controls.Add(this.ShowProductsBtn);
             this.Controls.Add(this.ProductDataGridView);
             this.Controls.Add(this.ShowManufacturersBtn);
             this.Controls.Add(this.ManufacturersDataGridView);
+            this.Controls.Add(this.AddProductPanel);
             this.Name = "DataBase";
             this.Text = "DataBase";
-            this.Load += new System.EventHandler(this.DataBase_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ManufacturersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersDataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -143,7 +244,17 @@
         private System.Windows.Forms.Button ShowProductsBtn;
         private System.Windows.Forms.DataGridView OrdersDataGridView;
         private System.Windows.Forms.Button ShowOrdersBtn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button AddProductBtn;
+        private System.Windows.Forms.Label Cost1Lbl;
+        private System.Windows.Forms.TextBox Cost1TextBox;
+        private System.Windows.Forms.TextBox CostOptTextBox;
+        private System.Windows.Forms.Label CostOptLbl;
+        private System.Windows.Forms.ComboBox ManufacturerComboBox;
+        private System.Windows.Forms.Label ManufacturerLbl;
+        private System.Windows.Forms.Label NameLbl;
+        private System.Windows.Forms.TextBox NameTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox CoverageTypeComboBox;
+        private System.Windows.Forms.Panel AddProductPanel;
     }
 }
