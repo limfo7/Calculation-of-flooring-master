@@ -29,7 +29,7 @@ namespace Calculator.Wfa
             if (LoginTB.Text=="Manager" && PasswordTB.Text == "Password")
             {
                 MessageBox.Show("Log In Success");
-                CalculatorForm calculatorForm = new CalculatorForm();
+                CalculatorForm calculatorForm = new CalculatorForm("Manager");
                 calculatorForm.Show();
                 this.Visible = false;
             }
@@ -43,6 +43,14 @@ namespace Calculator.Wfa
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void LoginGuestBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Log In As Guest Success");
+            CalculatorForm calculatorForm = new CalculatorForm("User");
+            calculatorForm.Show();
+            this.Visible = false;
         }
     }
 }

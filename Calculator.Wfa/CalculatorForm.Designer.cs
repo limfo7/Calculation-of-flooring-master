@@ -59,6 +59,8 @@
             this.ObstacleLengthTextBox = new System.Windows.Forms.TextBox();
             this.ObstacleWidthTextBox = new System.Windows.Forms.TextBox();
             this.ObstacleCheckBox = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.CovTypesPanel.SuspendLayout();
             this.ResultLogPanel.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +68,7 @@
             // FloorLengthLbl
             // 
             this.FloorLengthLbl.AutoSize = true;
-            this.FloorLengthLbl.Location = new System.Drawing.Point(314, 15);
+            this.FloorLengthLbl.Location = new System.Drawing.Point(277, 15);
             this.FloorLengthLbl.Name = "FloorLengthLbl";
             this.FloorLengthLbl.Size = new System.Drawing.Size(82, 13);
             this.FloorLengthLbl.TabIndex = 3;
@@ -75,7 +77,7 @@
             // FloorWidthLbl
             // 
             this.FloorWidthLbl.AutoSize = true;
-            this.FloorWidthLbl.Location = new System.Drawing.Point(500, 15);
+            this.FloorWidthLbl.Location = new System.Drawing.Point(502, 15);
             this.FloorWidthLbl.Name = "FloorWidthLbl";
             this.FloorWidthLbl.Size = new System.Drawing.Size(78, 13);
             this.FloorWidthLbl.TabIndex = 4;
@@ -83,7 +85,7 @@
             // 
             // FloorWidthTextBox
             // 
-            this.FloorWidthTextBox.Location = new System.Drawing.Point(596, 12);
+            this.FloorWidthTextBox.Location = new System.Drawing.Point(624, 12);
             this.FloorWidthTextBox.Name = "FloorWidthTextBox";
             this.FloorWidthTextBox.Size = new System.Drawing.Size(75, 20);
             this.FloorWidthTextBox.TabIndex = 6;
@@ -107,9 +109,9 @@
             // 
             // ResultBtn
             // 
-            this.ResultBtn.Location = new System.Drawing.Point(940, 267);
+            this.ResultBtn.Location = new System.Drawing.Point(921, 350);
             this.ResultBtn.Name = "ResultBtn";
-            this.ResultBtn.Size = new System.Drawing.Size(75, 23);
+            this.ResultBtn.Size = new System.Drawing.Size(109, 23);
             this.ResultBtn.TabIndex = 12;
             this.ResultBtn.Text = "Get result";
             this.ResultBtn.UseVisualStyleBackColor = true;
@@ -134,7 +136,7 @@
             this.CovTypesPanel.Controls.Add(this.CeramicTileCheckBox);
             this.CovTypesPanel.Location = new System.Drawing.Point(12, 59);
             this.CovTypesPanel.Name = "CovTypesPanel";
-            this.CovTypesPanel.Size = new System.Drawing.Size(115, 180);
+            this.CovTypesPanel.Size = new System.Drawing.Size(166, 180);
             this.CovTypesPanel.TabIndex = 14;
             // 
             // CovTypesInfoLbl
@@ -217,7 +219,7 @@
             // 
             this.InputPanel.AutoSize = true;
             this.InputPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.InputPanel.Location = new System.Drawing.Point(133, 59);
+            this.InputPanel.Location = new System.Drawing.Point(184, 59);
             this.InputPanel.Name = "InputPanel";
             this.InputPanel.Size = new System.Drawing.Size(290, 75);
             this.InputPanel.TabIndex = 15;
@@ -235,7 +237,7 @@
             // 
             this.OutputPanel.AutoSize = true;
             this.OutputPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.OutputPanel.Location = new System.Drawing.Point(429, 59);
+            this.OutputPanel.Location = new System.Drawing.Point(480, 59);
             this.OutputPanel.Name = "OutputPanel";
             this.OutputPanel.Size = new System.Drawing.Size(290, 75);
             this.OutputPanel.TabIndex = 16;
@@ -253,9 +255,9 @@
             // 
             this.ResultLogPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ResultLogPanel.Controls.Add(this.ResultLogLbl);
-            this.ResultLogPanel.Location = new System.Drawing.Point(725, 59);
+            this.ResultLogPanel.Location = new System.Drawing.Point(775, 59);
             this.ResultLogPanel.Name = "ResultLogPanel";
-            this.ResultLogPanel.Size = new System.Drawing.Size(290, 125);
+            this.ResultLogPanel.Size = new System.Drawing.Size(240, 125);
             this.ResultLogPanel.TabIndex = 18;
             // 
             // ClearCheckBoxesBtn
@@ -270,9 +272,9 @@
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(725, 267);
+            this.SaveBtn.Location = new System.Drawing.Point(691, 352);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(75, 23);
+            this.SaveBtn.Size = new System.Drawing.Size(109, 23);
             this.SaveBtn.TabIndex = 20;
             this.SaveBtn.Text = "Save to file";
             this.SaveBtn.UseVisualStyleBackColor = true;
@@ -280,9 +282,9 @@
             // 
             // CatalogBtn
             // 
-            this.CatalogBtn.Location = new System.Drawing.Point(832, 267);
+            this.CatalogBtn.Location = new System.Drawing.Point(806, 350);
             this.CatalogBtn.Name = "CatalogBtn";
-            this.CatalogBtn.Size = new System.Drawing.Size(75, 23);
+            this.CatalogBtn.Size = new System.Drawing.Size(109, 23);
             this.CatalogBtn.TabIndex = 21;
             this.CatalogBtn.Text = "Catalog";
             this.CatalogBtn.UseVisualStyleBackColor = true;
@@ -291,7 +293,7 @@
             // AddObstacleToAreaBtn
             // 
             this.AddObstacleToAreaBtn.Enabled = false;
-            this.AddObstacleToAreaBtn.Location = new System.Drawing.Point(222, 428);
+            this.AddObstacleToAreaBtn.Location = new System.Drawing.Point(243, 429);
             this.AddObstacleToAreaBtn.Name = "AddObstacleToAreaBtn";
             this.AddObstacleToAreaBtn.Size = new System.Drawing.Size(85, 23);
             this.AddObstacleToAreaBtn.TabIndex = 22;
@@ -320,7 +322,7 @@
             // ObstacleLengthTextBox
             // 
             this.ObstacleLengthTextBox.Enabled = false;
-            this.ObstacleLengthTextBox.Location = new System.Drawing.Point(116, 408);
+            this.ObstacleLengthTextBox.Location = new System.Drawing.Point(145, 408);
             this.ObstacleLengthTextBox.Name = "ObstacleLengthTextBox";
             this.ObstacleLengthTextBox.Size = new System.Drawing.Size(100, 20);
             this.ObstacleLengthTextBox.TabIndex = 25;
@@ -329,7 +331,7 @@
             // ObstacleWidthTextBox
             // 
             this.ObstacleWidthTextBox.Enabled = false;
-            this.ObstacleWidthTextBox.Location = new System.Drawing.Point(116, 450);
+            this.ObstacleWidthTextBox.Location = new System.Drawing.Point(145, 450);
             this.ObstacleWidthTextBox.Name = "ObstacleWidthTextBox";
             this.ObstacleWidthTextBox.Size = new System.Drawing.Size(100, 20);
             this.ObstacleWidthTextBox.TabIndex = 26;
@@ -346,11 +348,33 @@
             this.ObstacleCheckBox.UseVisualStyleBackColor = true;
             this.ObstacleCheckBox.CheckedChanged += new System.EventHandler(this.ObstacleCheckBox_CheckedChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(940, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "eng";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(940, 30);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 29;
+            this.button2.Text = "rus";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // CalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1029, 519);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ObstacleCheckBox);
             this.Controls.Add(this.ObstacleWidthTextBox);
             this.Controls.Add(this.ObstacleLengthTextBox);
@@ -417,6 +441,8 @@
         private System.Windows.Forms.TextBox ObstacleLengthTextBox;
         private System.Windows.Forms.TextBox ObstacleWidthTextBox;
         private System.Windows.Forms.CheckBox ObstacleCheckBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

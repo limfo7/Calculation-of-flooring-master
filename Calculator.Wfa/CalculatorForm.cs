@@ -15,9 +15,18 @@ namespace Calculator.Wfa
         public int OutputLevel { get { return _outputPanels.Count; } }
         public bool ObstacleFlag { get; set; } = false;
 
-        public CalculatorForm()
+        public CalculatorForm(string role)
         {
             InitializeComponent();
+            if (role=="User")
+            {
+                ChangeStateForUser();
+            }
+        }
+
+        private void ChangeStateForUser()
+        {
+            CatalogBtn.Enabled = false;
         }
 
         private void RefreshState()
@@ -248,6 +257,52 @@ namespace Calculator.Wfa
                 return;
             }
             RefreshArea();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Text = "Форма расчёта";
+            AreaLbl.Text = "Площадь: ";
+            CovTypesInfoLbl.Text = "Типы покрытий";
+            FloorLengthLbl.Text = "Длина помещения";
+            FloorWidthLbl.Text = "Ширина помещения";
+            label1.Text = "Длина препятствия";
+            label2.Text = "Ширина препятствия";
+            AddObstacleToAreaBtn.Text = "Добавить препятствие";
+            CatalogBtn.Text = "Каталог";
+            ClearCheckBoxesBtn.Text = "Очистить";
+            ResultBtn.Text = "Результат";
+            this.ObstacleCheckBox.Text = "Препятствие";
+            LinoleumCheckBox.Text="Линоулем";
+            ParquetCheckBox.Text = "Паркет";
+            CeramicTileCheckBox.Text = "Кермамическая плитка";
+            ParquetBoardCheckBox.Text = "Паркетная доска";
+            CarpetCheckBox.Text = "Ковролин";
+            LaminateCheckBox.Text = "Ламинат";
+            SaveBtn.Text = "Сохранить отчент";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Text = "Calculator Form";
+            AreaLbl.Text = "Площадь: ";
+            CovTypesInfoLbl.Text = "Coverage type";
+            FloorLengthLbl.Text = "Floor length";
+            FloorWidthLbl.Text = "Floor width";
+            label1.Text = "Obstacle length";
+            label2.Text = "Obstacle width";
+            AddObstacleToAreaBtn.Text = "Add obstacle";
+            CatalogBtn.Text = "Catalog";
+            ClearCheckBoxesBtn.Text = "Clear";
+            ResultBtn.Text = "Result";
+            this.ObstacleCheckBox.Text = "Obstacle";
+            LinoleumCheckBox.Text = "Linoleum";
+            ParquetCheckBox.Text = "Parquet";
+            CeramicTileCheckBox.Text = "Ceramic Tile";
+            ParquetBoardCheckBox.Text = "Parquet board";
+            CarpetCheckBox.Text = "Carpet";
+            LaminateCheckBox.Text = "Laminate";
+            SaveBtn.Text = "Save to file";
         }
     }
 }

@@ -33,6 +33,7 @@
             this.LoginTB = new System.Windows.Forms.TextBox();
             this.PasswordTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.LoginGuestBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -79,11 +80,22 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
+            // LoginGuestBtn
+            // 
+            this.LoginGuestBtn.Location = new System.Drawing.Point(168, 223);
+            this.LoginGuestBtn.Name = "LoginGuestBtn";
+            this.LoginGuestBtn.Size = new System.Drawing.Size(100, 23);
+            this.LoginGuestBtn.TabIndex = 5;
+            this.LoginGuestBtn.Text = "Guest";
+            this.LoginGuestBtn.UseVisualStyleBackColor = true;
+            this.LoginGuestBtn.Click += new System.EventHandler(this.LoginGuestBtn_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 301);
+            this.Controls.Add(this.LoginGuestBtn);
             this.Controls.Add(this.PasswordTB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.LoginTB);
@@ -103,5 +115,6 @@
         private System.Windows.Forms.TextBox LoginTB;
         private System.Windows.Forms.TextBox PasswordTB;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button LoginGuestBtn;
     }
 }

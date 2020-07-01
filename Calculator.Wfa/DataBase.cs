@@ -23,7 +23,46 @@ namespace Calculator.Wfa
 
         private void ShowProductsBtn_Click(object sender, EventArgs e)
         {
-            ProductDataGridView.DataSource = AppContext.Products.ToList();
+            var covType = AppContext.CoverageTypes.ToList();
+            var manufacturer = AppContext.Manufacturers.ToList();
+            var products = AppContext.Products.ToList();
+            ProductDataGridView.DataSource = products
+                .Join(
+                covType,
+                prod => prod.CoverageTypeId,
+                cov => cov.CoverageTypeId,
+                (prod, cov) => new
+                {
+                    ProductId = prod.ProductId,
+                    Name = prod.Name,
+                    CoverageName = cov.Name,
+                    ManufacturerId = prod.ManufacturerId,
+                    Cost1 = prod.Coast1,
+                    CostOpt = prod.CoastOpt
+                })
+                .Join(
+                manufacturer,
+                prod => prod.ManufacturerId,
+                man => man.ManufacturerId,
+                (prod, man) => new
+                {
+                    ProductId = prod.ProductId,
+                    Name = prod.Name,
+                    CoverageName = prod.CoverageName,
+                    ManufacturerName = man.Name,
+                    Cost1 = prod.Cost1,
+                    CostOpt = prod.CostOpt
+                })
+                .Select(item
+                => new
+                {
+                    Id = item.ProductId,
+                    ТипПокрытия = item.CoverageName,
+                    Производитель = item.ManufacturerName,
+                    Продукт = item.Name,
+                    Цена1 = item.Cost1,
+                    ЦенаОпт = item.CostOpt
+                }).ToList();
         }
 
         private void ShowOrdersBtn_Click(object sender, EventArgs e)
@@ -34,6 +73,8 @@ namespace Calculator.Wfa
 
         private void AddProductBtn_Click(object sender, EventArgs e)
         {
+            var prodId = AppContext.Products.Count();
+            MessageBox.Show("New product is added");
             if (NameTextBox.Text != string.Empty ||
                 Cost1TextBox.Text != string.Empty ||
                 CostOptTextBox.Text != string.Empty)
@@ -41,11 +82,12 @@ namespace Calculator.Wfa
                 AppContext.Products.Add(
                     new Product
                     {
+                        ProductId=prodId,
                         Coast1 = Convert.ToDouble(Cost1TextBox.Text),
                         CoastOpt = Convert.ToDouble(CostOptTextBox.Text),
                         Name = NameTextBox.Text,
-                        ManufacturerId = ManufacturerComboBox.SelectedIndex,
-                        CoverageTypeId = CoverageTypeComboBox.SelectedIndex
+                        ManufacturerId = ManufacturerComboBox.SelectedIndex+1,
+                        CoverageTypeId = CoverageTypeComboBox.SelectedIndex+1
                     });
             }
             AppContext.SaveChanges();
@@ -75,6 +117,24 @@ namespace Calculator.Wfa
                 items[i++] = $"{i}. {item.Name}";
             }
             CoverageTypeComboBox.Items.AddRange(items);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var orderId = AppContext.OrderforBuyings.Count();
+            MessageBox.Show("Продукт добавлен");
+            if (textBox1.Text!=string.Empty && textBox2.Text!=string.Empty)
+            {
+                AppContext.OrderforBuyings.Add(
+                    new OrderforBuying
+                    {
+                        OrderId = orderId,
+                        OrderNumber = textBox2.Text,
+                        ProductId = Convert.ToInt32(textBox1.Text)
+                    }
+                    );
+                AppContext.SaveChanges();
+            }
         }
     }
 }
